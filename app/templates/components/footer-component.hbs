@@ -1,7 +1,13 @@
 <footer>
     <div class="container-fluid" id="footerPrev">
-        <h4>{{task.name}}</h4>
-        <small>{{date-format task.date}}</small>
-        <p>{{task.dscp}}</p>
+        {{#if task}} 
+        <h4>{{task.title}}</h4>
+        <small>{{task.date}}</small>
+        <p>{{task.discrip}}</p>
+        {{else}} 
+            <span class="center">
+                Select a task to preview it.
+            </span>
+        {{/if}}
     </div>
 </footer>

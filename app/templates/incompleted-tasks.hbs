@@ -20,8 +20,8 @@
                 {{#each tasks as |task|}}
                     <tr>
                         <th scope="row"><i class="material-icons">check_circle_outline</i></th>
-                        <td class="hand"> <a href="">{{task.name}}</a></td>
-                        <td>{{date-format task.date}}</td>
+                        <td class="hand"{{action "previewTask" task}}> {{task.title}} </td>
+                        <td>{{task.date}}</td>
                         <td> 
                             <i class="material-icons iDark" {{action "editTask" i }}>edit</i>
                             <i class="material-icons" {{action "deleteTask" i}}>delete_outline</i>
@@ -32,3 +32,5 @@
         </table>
     </div>
 </section>
+
+{{footer-component task=selectedTask}}
